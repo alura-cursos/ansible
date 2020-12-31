@@ -1,0 +1,15 @@
+- name: Instalando pacotes do MariaDB
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - mariadb-server
+    - mariadb
+    - MySQL-python
+
+
+- name: Enable service Mysql, and not touch the state
+  service:
+    name: mariadb
+    enabled: yes
+    state: started
