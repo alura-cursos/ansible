@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  user: adminlx
+  roles:
+  - { role: install-db, tags: ["install_db"]}
+  - { role: install-wp, tags: ["install_wp"]}
+    
